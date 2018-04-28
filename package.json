@@ -4,8 +4,23 @@
   "description": "Uploadcare dialog for Vue apps by @TipeIO",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -rf dist",
+    "build": "webpack",
+    "prepublishOnly": "npm run build"
   },
   "author": "PatrickJS <patrick@tipe.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+  "@babel/core": "^7.0.0-beta.31",
+  "@babel/preset-env": "^7.0.0-beta.31",
+  "babel-loader": "^8.0.0-beta.0",
+  "css-loader": "^0.28.7",
+  "less": "^2.7.3",
+  "less-loader": "^4.0.5",
+  "style-loader": "^0.19.0",
+  "vue-loader": "^13.5.0",
+  "vue-template-compiler": "^2.5.3",
+  "webpack": "^3.8.1"
+}
 }
