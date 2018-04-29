@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app"></div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script>
+    UPLOADCARE_PUBLIC_KEY = 'Your Key Here';
+  </script>
+  <script src="https://ucarecdn.com/libs/widget/3.2.3/uploadcare.full.min.js" charset="utf-8"></script>
+  <script src="uploadcare-vue.js"></script>
+  <script>
+    const Uploadcare = window['uploadcare-vue'].default;
+    const key = 'Your key here'
+    const app = new Vue({
+      el: '#app',
+      name: 'App',
+      template: `
+      <div>
+        {{ message }}
+
+        <uploadcare
+          :publicKey="publicKey"
+          @success="onSuccess"
+          @error="onError">
+          <button>New Asset</button>
+        </uploadcare>
+      </div>
+      `,
+      componentName: 'App',
+      data: {
+        message: 'hello',
+        publicKey: key
+      },
+      methods: {
+        onSuccess(event) {
+          console.log('Success: ', event);
+        },
+        onError(event) {
+          console.log('Error: ', event);
+        }
+      },
+      components: {
+        'uploadcare': Uploadcare
+      }
+    })
+  </script>
+</body>
+</html>
