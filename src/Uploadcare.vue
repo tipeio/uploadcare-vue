@@ -131,8 +131,7 @@
           previewProxy,
           previewUrlCallback,
           cdnBase,
-          doNotStore,
-          validators
+          doNotStore
         }
 
         if (validators && validators.length) {
