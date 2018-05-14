@@ -30,7 +30,7 @@ It supports multi-file uploads, manual crop, integrations with social networks a
 
 ## Docs
 
-See the complete docs on using Uploadcare Widget [here](https://uploadcare.com/documentation/widget/?utm_source=tipe&utm_campaign=tipe-oss).
+See the complete docs on using Uploadcare Widget [here](https://uploadcare.com/documentation/widget/?utm_source=tipe&utm_campaign=tipe-oss).  See the [usage](#usage) section for component props.
 
 ## Types of bundles
 
@@ -82,6 +82,9 @@ Your secret key is not required for the widget
   <button>New Asset</button>
 </uploadcare>
 ```
+
+### Component Props
+Internally, the component uses the [Open Dialog API](https://uploadcare.com/docs/api_reference/javascript/dialog_panel/) and uses the props as options.  All of the options on the [Widget Configuration](https://uploadcare.com/docs/uploads/widget/config/) page are supported as props.
 
 ## Configuration
 
