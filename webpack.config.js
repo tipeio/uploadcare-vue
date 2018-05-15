@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 var ROOT = path.resolve(__dirname)
 var root = path.join.bind(path, ROOT)
@@ -17,8 +18,11 @@ const create = (filename, output, external) => {
     externals: {
       'uploadcare-widget': external
     },
+    plugins: [
+      new VueLoaderPlugin()
+    ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           loader: 'babel-loader',
@@ -41,6 +45,6 @@ const create = (filename, output, external) => {
   }
 }
 module.exports = [
-  create('index.js', root('./dist'), 'uploadcare-js'),
+  create('index.js', root('./dist'), 'uploadcare-widget'),
   create('uploadcare-vue.js', root('./example'), 'uploadcare')
 ];
