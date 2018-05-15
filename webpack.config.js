@@ -45,6 +45,6 @@ const create = (filename, output, external) => {
   }
 }
 module.exports = [
-  create('index.js', root('./dist'), 'uploadcare-js'),
+  create('index.js', root('./dist'), 'uploadcare-widget'),
   create('uploadcare-vue.js', root('./example'), 'uploadcare')
 ];
