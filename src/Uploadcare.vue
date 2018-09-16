@@ -152,8 +152,14 @@
                 fileProm.fail((err) => {
                   this.$emit('error', err)
                 })
+                fileProm.progress((uploadInfo) => {
+                  this.$emit('progress', uploadInfo)
+                })
               })
             })
+            promise.progress((uploadInfo) => {
+              this.$emit('groupProgress', uploadInfo);
+            });
             promise.fail((err) => {
               this.$emit('error', err)
             })
@@ -163,6 +169,9 @@
             })
             filePromise.fail((err) => {
               this.$emit('error', err)
+            })
+            filePromise.progress((uploadInfo) => {
+              this.$emit('progress', uploadInfo)
             })
           }
         })
