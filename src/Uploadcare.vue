@@ -36,8 +36,8 @@
         default: ''
       },
       imageShrink: {
-        type: Boolean,
-        default: false
+        type: String,
+        default: ''
       },
       clearable: {
         type: Boolean,
